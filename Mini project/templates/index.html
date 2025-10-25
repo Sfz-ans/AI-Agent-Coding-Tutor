@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Coding Tutor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+
+<body class="app-body">
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>Chats</h2>
+      <button id="closeSidebar" class="close-btn">✕</button>
+    </div>
+
+    <button id="newChatBtn" class="new-chat-btn">
+      + New Chat
+    </button>
+
+    <ul id="chatList" class="chat-list"></ul>
+  </div>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button id="openSidebar" class="menu-btn">☰</button>
+        <h1>🤖 AI Coding Tutor</h1>
+      </div>
+
+      <div class="profile-section">
+        <button id="profileBtn" class="profile-btn">
+          <span id="usernameDisplay">User</span>
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="profile-img" />
+        </button>
+
+        <div id="profileMenu" class="profile-menu hidden">
+          <button id="logoutBtn" class="menu-item">Logout</button>
+          <button id="deleteBtn" class="menu-item delete">Delete Account</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="chat" class="chat-window"></main>
+
+    <footer class="chat-footer">
+      <input id="userInput" type="text" placeholder="Ask your coding question..." />
+      <button id="sendBtn" class="send-btn">Send</button>
+    </footer>
+  </div>
+
+  <div id="authContainer" class="auth-container">
+    <div class="auth-box">
+      <h2>Login / Signup</h2>
+      <input id="username" type="text" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+      <div class="auth-buttons">
+        <button id="loginBtn" class="login-btn">Login</button>
+        <button id="signupBtn" class="signup-btn">Signup</button>
+      </div>
+      <p id="authError"></p>
+    </div>
+  </div>
+ 
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
