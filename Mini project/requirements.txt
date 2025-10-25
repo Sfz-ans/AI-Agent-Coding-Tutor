@@ -1,6 +1,0 @@
-Flask
-requests
-python-dotenv
-markdown
-openai
-gunicorn
